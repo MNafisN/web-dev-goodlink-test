@@ -8,6 +8,9 @@ use Illuminate\Http\JsonResponse;
 use Exception;
 use App\Exceptions\ArrayException;
 
+use App\Models\Member;
+use App\Models\User;
+
 class MemberController extends Controller
 {
     protected $memberService;
@@ -15,6 +18,14 @@ class MemberController extends Controller
     public function __construct(MemberService $memberService)
     {
         $this->memberService = $memberService;
+    }
+
+    public function index()
+    {
+        $members = Member::paginate();
+        $users = User::paginate();
+
+        return view('users.index', compact('members', 'users'));
     }
 
     /**

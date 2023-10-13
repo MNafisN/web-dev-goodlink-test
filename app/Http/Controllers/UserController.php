@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        $users = User::paginate();
+
+        return view('users.index', compact('users'));
+    }
+
     public function userLogin(Request $request)
     {
         $user = User::find(1);
@@ -16,7 +23,7 @@ class UserController extends Controller
             $request->session()->regenerate();
         }
 
-        return redirect('/');    
+        return redirect('/');
     }
-
+    
 }
