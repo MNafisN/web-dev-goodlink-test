@@ -113,7 +113,55 @@
                     </div>
                 </div>
                 <!-- /.col -->
+                <div class="col-md-6">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Statistics</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                                </button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                                <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center">
+                                <p class="text-center">Summary of users in this website, click to see details.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <a href="{{ route('users.index') }}">
+                                            <div class="info-box bg-light">
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text text-center text-muted">Total Members</span>
+                                                    <span class="info-box-number text-center text-muted mb-0">{{ $members }}</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <a href="{{ route('users.index') }}">
+                                            <div class="info-box bg-light">
+                                                <div class="info-box-content">
+                                                    <span class="info-box-text text-center text-muted">Total Users</span>
+                                                    <span class="info-box-number text-center text-muted mb-0">{{ $users }}</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- /.col -->
+            </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>

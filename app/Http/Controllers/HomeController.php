@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Member;
+use App\Models\User;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $sumMember = Member::all()->count();
+        $sumUser = User::all()->count();
+
+        return view('home', [
+            'members' => $sumMember,
+            'users' => $sumUser
+        ]);
     }
 }
